@@ -1,0 +1,17 @@
+<!--
+@Time    : 2026/11/2 00:00
+@Author  : fzf
+@FileName: pulse.svg
+@Software: resource-pulse
+-->
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <title>Pip, the Pulse swift</title>
+  <desc>An original swift mascot. A raised wing follows the shape of a pulse.</desc>
+  <rect x="24" y="24" width="464" height="464" rx="104" fill="#264e68"/>
+  <path d="M106 326 170 258 163 146 252 218 299 191C330 174 366 190 372 220L409 237 375 249C366 292 332 320 285 321L232 318 153 377 170 326Z" fill="#f7fafb"/>
+  <path d="m173 154 76 57 46-94 11 124-51 49-62-38Z" fill="#8dc4ca"/>
+  <path d="m119 330 72-22 40 10-77 58 16-49Z" fill="#c2dce4"/>
+  <path d="m373 220 36 17-34 12Z" fill="#d9b46f"/>
+  <circle cx="345" cy="217" r="8" fill="#17374b"/>
+  <path d="m196 252 35 9 22-32 18 32 26-12" fill="none" stroke="#264e68" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

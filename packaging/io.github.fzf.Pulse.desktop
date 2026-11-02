@@ -1,0 +1,19 @@
+# @Time    : 2026/11/2 00:00
+# @Author  : fzf
+# @FileName: io.github.fzf.Pulse.desktop
+# @Software: resource-pulse
+
+[Desktop Entry]
+Type=Application
+Name=Pulse
+Name[zh_CN]=Pulse 系统监控
+Comment=Local system resource monitor
+Comment[zh_CN]=查看 CPU、内存、网络、容量和进程
+Exec=resource-pulse
+TryExec=resource-pulse
+Icon=/usr/share/icons/hicolor/scalable/apps/io.github.fzf.Pulse.svg
+Terminal=false
+Categories=System;Monitor;
+Keywords=CPU;Memory;Network;Processes;系统;监控;内存;进程;
+StartupWMClass=io.github.fzf.Pulse
+StartupNotify=true

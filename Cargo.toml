@@ -1,0 +1,38 @@
+[workspace]
+members = ["crates/pulse-ui"]
+resolver = "2"
+
+[workspace.dependencies]
+gpui = { git = "https://github.com/zed-industries/zed", rev = "c4273271092b0287f7d181f616bd5171e0a2f70c", default-features = false }
+gpui_platform = { git = "https://github.com/zed-industries/zed", rev = "c4273271092b0287f7d181f616bd5171e0a2f70c", default-features = false, features = ["font-kit", "wayland", "x11"] }
+
+[package]
+name = "resource-pulse"
+version = "0.1.1"
+edition = "2024"
+license = "Apache-2.0"
+description = "Native system resource monitor with desktop and tray integration"
+repository = "https://github.com/fzf54122/resource-pulse"
+publish = false
+
+[dependencies]
+pulse-ui = { path = "crates/pulse-ui" }
+sysinfo = { version = "=0.31.4", default-features = false, features = ["system", "network", "disk"] }
+async-channel = "=2.5.0"
+serde = { version = "=1.0.229", features = ["derive"] }
+serde_json = "=1.0.154"
+image = { version = "=0.25.10", default-features = false, features = ["png"] }
+
+[target.'cfg(target_os = "linux")'.dependencies]
+ksni = { version = "=0.3.7", default-features = false, features = ["async-io"] }
+zbus = { version = "=5.13.2", default-features = false, features = ["async-io", "blocking-api"] }
+raw-window-handle = "=0.6.2"
+futures-lite = "=2.6.1"
+x11rb = "=0.13.2"
+
+[dev-dependencies]
+gpui = { workspace = true, features = ["test-support"] }
+
+[profile.release]
+opt-level = 2
+strip = "symbols"

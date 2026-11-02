@@ -1,0 +1,15 @@
+#!/bin/sh
+# @Time    : 2026/11/2 08:35
+# @Author  : fzf
+# @FileName: postinst
+# @Software: resource-pulse
+
+set -e
+
+case "$1" in
+    configure|abort-upgrade|abort-remove|abort-deconfigure)
+        if command -v gtk-update-icon-cache >/dev/null 2>&1; then
+            gtk-update-icon-cache -q -f -t /usr/share/icons/hicolor
+        fi
+        ;;
+esac

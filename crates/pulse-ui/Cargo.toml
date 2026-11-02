@@ -1,0 +1,17 @@
+# @Time    : 2026/10/30 18:04
+# @Author  : fzf
+# @FileName: Cargo.toml
+# @Software: resource-pulse
+
+[package]
+name = "pulse-ui"
+version = "0.1.0"
+edition = "2024"
+license = "Apache-2.0"
+repository = "https://github.com/fzf54122/resource-pulse"
+description = "Reusable light-themed GPUI building blocks"
+publish = false
+
+[dependencies]
+gpui.workspace = true
+gpui_platform.workspace = true

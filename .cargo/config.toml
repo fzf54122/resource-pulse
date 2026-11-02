@@ -1,0 +1,10 @@
+# @Time    : 2026/10/30 18:04
+# @Author  : fzf
+# @FileName: config.toml
+# @Software: resource-pulse
+
+[net]
+git-fetch-with-cli = true
+
+[build]
+jobs = 2

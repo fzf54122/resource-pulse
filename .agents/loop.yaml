@@ -1,0 +1,25 @@
+version: 1
+job:
+  name: resource-pulse
+  fail_fast: true
+  max_concurrency: 1
+  default_timeout: 20m
+  tasks:
+    - id: fmt
+      type: shell
+      cmd: "cargo fmt --all --check"
+
+    - id: lint
+      type: shell
+      depends_on: [fmt]
+      cmd: "cargo clippy --workspace --all-targets --locked -- -D warnings"
+
+    - id: test
+      type: shell
+      depends_on: [lint]
+      cmd: "cargo test --workspace --all-targets --locked"
+
+    - id: packaging
+      type: shell
+      depends_on: [test]
+      cmd: "PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s scripts -p 'test_*.py' && desktop-file-validate packaging/io.github.fzf.Pulse.desktop"
